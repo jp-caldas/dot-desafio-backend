@@ -7,6 +7,7 @@ from langchain_openai import ChatOpenAI
 
 @lru_cache(maxsize=1)
 def _get_chain():
+    # System prompt defines the assistant as a Python tutor for EdTech context
     prompt = ChatPromptTemplate.from_messages([
         (
             "system",
@@ -15,6 +16,7 @@ def _get_chain():
         ),
         ("human", "{user_question}"),
     ])
+    # Cache ensures the connection is reused across requests
     llm = ChatOpenAI(model="gpt-4o", temperature=0.3, api_key=config("OPENAI_API_KEY"))
     return prompt | llm
 

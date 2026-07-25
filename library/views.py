@@ -9,6 +9,7 @@ class BookViewSet(viewsets.ModelViewSet):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
     filter_backends = [DjangoFilterBackend]
+    # icontains allows partial matching (e.g. "rama" matches "Ramalho")
     filterset_fields = {
         "title": ["icontains"],
         "author": ["icontains"],

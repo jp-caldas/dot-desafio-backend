@@ -108,8 +108,8 @@ Response (200):
 ```json
 {
   "results": [
-    {"document": "FastAPI is a modern web framework...", "score": 0.49},
-    {"document": "Python is a high-level...", "score": 0.49}
+    {"document": "A web framework is a software framework designed to support the development of web applications...", "score": 0.67},
+    {"document": "Python is a high-level, general-purpose programming language...", "score": 0.51}
   ]
 }
 ```
